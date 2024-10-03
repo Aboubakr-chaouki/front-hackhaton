@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Image, Zap, Layers, Cpu, Database, Maximize, Users, Building, Home, TreePine, Facebook, Twitter, Instagram, Linkedin, Leaf } from 'lucide-react';
+import { Image, Zap, Layers, Cpu, Database, Maximize, Users, Building, Home, TreePine } from 'lucide-react';
 import picture1 from '../assets/picture1.avif';
+import picture2 from "../assets/picture2.jpg";
+import picture3 from "../assets/picture3.jpg";
+import picture4 from "../assets/picture4.jpg";
 import Header from '../components/header'; 
 import Footer from '../components/footer'; 
+
 
 const LandingPage = () => {
   return (
@@ -26,7 +30,7 @@ const HeroSection = () => (
   <section id="accueil" className="py-20 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white">
     <div className="container mx-auto px-4">
       <div className="flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mb-10 md:mb-0">
+        <div className="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             Révolutionnez vos espaces verts avec l'IA
           </h1>
@@ -35,7 +39,7 @@ const HeroSection = () => (
           </p>
           <Link 
             to="/generator" 
-            className="bg-white text-emerald-600 px-6 sm:px-8 py-3 rounded-full text-lg font-semibold hover:bg-emerald-100 transition duration-300 shadow-lg inline-block"
+            className="bg-white text-emerald-600 px-6 sm:px-8 py-3 rounded-full text-lg font-semibold hover:bg-emerald-800 hover:text-white transition duration-300 shadow-lg inline-block"
           >
             Générer un environnement
           </Link>
@@ -51,25 +55,36 @@ const HeroSection = () => (
 const TechnologySection = () => (
   <section id="technologie" className="py-20 bg-gradient-to-br from-gray-200 to-gray-300 text-gray-600">
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl sm:text-4xl font-bold text-emerald-800 mb-12 text-center">Notre Technologie IA</h2>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <h2 className="text-3xl sm:text-4xl font-bold text-emerald-800 mb-12 text-center">Quelques environnements</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
-          { icon: Cpu, title: "Réseaux neuronaux profonds", description: "Apprentissage continu pour des résultats toujours plus précis" },
-          { icon: Database, title: "Base de données exhaustive", description: "Millions de plantes et designs pour une variété incomparable" },
-          { icon: Maximize, title: "Rendu haute définition", description: "Visualisations en 4K pour un réalisme maximal" }
+          { image: picture2},
+          { image: picture3 },
+          { image: picture4}
         ].map((tech, index) => (
-          <TechCard key={index} {...tech} />
+          <TechImageDiv key={index} {...tech} />
         ))}
       </div>
     </div>
   </section>
 );
 
+const TechImageDiv = ({ image, alt }) => (
+  <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+    <div className="w-full h-0 pb-[75%] relative">
+      <img 
+        src={image} 
+        alt={alt}
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      />
+    </div>
+  </div>
+);
 const FeaturesSection = () => (
   <section id="fonctionnalités" className="py-20 bg-gradient-to-br from-emerald-500 to-emerald-700 text-white">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">Fonctionnalités Clés</h2>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
           { icon: Image, title: "Analyse d'image avancée", description: "Interprétation précise des espaces existants"},
           { icon: Zap, title: "Génération IA", description: "Création de designs paysagers réalistes et innovants" },
@@ -86,7 +101,7 @@ const ApplicationsSection = () => (
   <section id="applications" className="py-20 bg-gradient-to-br from-gray-200 to-gray-300 text-gray-600">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl sm:text-4xl font-bold text-emerald-800 mb-12 text-center">Applications Pratiques</h2>
-      <div className="grid sm:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         {[
           { icon: Users, title: "Paysagistes professionnels", description: "Création rapide de concepts et de présentations client" },
           { icon: Building, title: "Urbanisme et aménagement", description: "Planification à grande échelle de zones vertes urbaines" },
@@ -145,7 +160,7 @@ const StatisticsSection = () => (
   <section className="py-20 bg-gradient-to-br from-gray-200 to-gray-300 text-gray-600">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">GreenScape AI en chiffres</h2>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {[
           { value: "100K+", label: "Designs générés" },
           { value: "98%", label: "Taux de satisfaction client" },
@@ -161,7 +176,6 @@ const StatisticsSection = () => (
     </div>
   </section>
 );
-
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="bg-white bg-opacity-10 rounded-lg shadow-lg p-6 text-center backdrop-filter backdrop-blur-sm hover:shadow-xl transition duration-300">
@@ -184,7 +198,7 @@ const TechCard = ({ icon: Icon, title, description }) => (
 );
 
 const ApplicationCard = ({ icon: Icon, title, description }) => (
-  <div className="flex items-start space-x-4 bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+  <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4 bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
     <div className="flex-shrink-0">
       <Icon className="h-12 w-12 text-emerald-600" />
     </div>

@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
         <div className="flex items-center space-x-2 mb-4 sm:mb-0">
           <Leaf className="h-8 w-8 text-emerald-600" />
-          <span className="text-2xl font-bold text-emerald-800">GreenScape AI</span>
+          <a href="/" className="text-2xl font-bold text-emerald-800">GreenScape AI</a>  
         </div>
         <nav>
           <ul className="flex space-x-4 sm:space-x-6">
