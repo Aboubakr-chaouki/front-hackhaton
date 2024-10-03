@@ -58,13 +58,13 @@ const LandscapeGenerator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header/>
-      <main className="pt-24 pb-12">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-emerald-800 mb-8 text-center">Générez votre paysage</h1>
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      <Header />
+      <main className="flex-grow py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-bold text-emerald-800 mb-8 text-center">Générez votre paysage</h1>
           
-          <form onSubmit={handleSubmit} className="max-w-3xl mx-auto bg-white rounded-lg shadow-xl p-8">
+          <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-xl p-6 sm:p-8">
             <div className="mb-6">
               <label htmlFor="image" className="block text-gray-700 text-sm font-bold mb-2">
                 Téléchargez une image
@@ -75,7 +75,7 @@ const LandscapeGenerator = () => {
                     <img 
                       src={previewUrl} 
                       alt="Preview" 
-                      className="max-w-full h-auto max-h-96 rounded mx-auto"
+                      className="max-w-full h-auto max-h-64 sm:max-h-96 rounded mx-auto object-contain"
                     />
                     <button
                       type="button"
@@ -89,7 +89,7 @@ const LandscapeGenerator = () => {
                 ) : (
                   <div className="space-y-1 text-center">
                     <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                    <div className="flex text-sm text-gray-600">
+                    <div className="flex flex-col sm:flex-row text-sm text-gray-600">
                       <label htmlFor="image" className="relative cursor-pointer bg-white rounded-md font-medium text-emerald-600 hover:text-emerald-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500">
                         <span>Télécharger un fichier</span>
                         <input id="image" name="image" type="file" className="sr-only" onChange={handleImageChange} accept="image/*" />
@@ -125,7 +125,7 @@ const LandscapeGenerator = () => {
             <div className="flex items-center justify-center">
               <button
                 type="submit"
-                className={`bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center transition-colors ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`w-full sm:w-auto bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center justify-center transition-colors ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
                 disabled={isLoading}
               >
                 {isLoading ? 'Envoi en cours...' : (
@@ -139,7 +139,7 @@ const LandscapeGenerator = () => {
           </form>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
