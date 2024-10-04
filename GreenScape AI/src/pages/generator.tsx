@@ -62,7 +62,7 @@ const LandscapeGenerator = () => {
       <Header />
       <main className="flex-grow py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl font-bold text-emerald-800 mb-8 text-center">Générez votre paysage</h1>
+          <h1 className="text-3xl mt-24 sm:text-4xl font-bold text-emerald-800 mb-8 text-center">Générez votre paysage</h1>
           
           <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-xl p-6 sm:p-8">
             <div className="mb-6">
