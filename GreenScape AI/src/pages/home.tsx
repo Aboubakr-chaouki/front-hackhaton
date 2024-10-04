@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Image, Zap, Layers, Cpu, Database, Maximize, Users, Building, Home, TreePine } from 'lucide-react';
 import picture1 from '../assets/picture1.avif';
@@ -41,7 +40,7 @@ const HeroSection = () => (
             to="/generator" 
             className="bg-white text-emerald-600 px-6 sm:px-8 py-3 rounded-full text-lg font-semibold hover:bg-emerald-800 hover:text-white transition duration-300 shadow-lg inline-block"
           >
-            Générer un environnement
+            Générer un environnement    
           </Link>
         </div>
         <div className="md:w-1/2 mt-8 md:mt-0 md:ml-4">
@@ -55,7 +54,7 @@ const HeroSection = () => (
 const TechnologySection = () => (
   <section id="technologie" className="py-20 bg-gradient-to-br from-gray-200 to-gray-300 text-gray-600">
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl sm:text-4xl font-bold text-emerald-800 mb-12 text-center">Quelques environnements</h2>
+      <h2 className="text-3xl sm:text-4xl font-bold  mb-12 text-center">Quelques environnements</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
           { image: picture2},
@@ -100,7 +99,7 @@ const FeaturesSection = () => (
 const ApplicationsSection = () => (
   <section id="applications" className="py-20 bg-gradient-to-br from-gray-200 to-gray-300 text-gray-600">
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl sm:text-4xl font-bold text-emerald-800 mb-12 text-center">Applications Pratiques</h2>
+      <h2 className="text-3xl sm:text-4xl font-bold  mb-12 text-center">Applications Pratiques</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         {[
           { icon: Users, title: "Paysagistes professionnels", description: "Création rapide de concepts et de présentations client" },
